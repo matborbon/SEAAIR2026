@@ -1,0 +1,18 @@
+Human Validation — Analysis Workbook
+This workbook traces the two coders' raw Taguette ratings through to Tables 5-7 of the manuscript.
+All grey-tabbed computation sheets use LIVE FORMULAS; edit the blue input cells on 'Raw ratings' and every result recomputes.
+
+Design: 30 no-RAKE baseline topics (15 LDA + 15 NMF), each rated by a Main coder (C1) and a Secondary coder (C2)
+on four criteria — Coherence, Domain, Label, Fidelity — giving 30×2×4 = 240 judgments. Topics were blinded to model identity.
+
+Sheets:
+  • Raw ratings — the coders' tags per topic (BLUE = raw input), plus the topic key and ordinal encodings (formulas).
+  • A_Reliability(kappa) — inter-coder contingency tables → percent agreement and Cohen's kappa (Table 5).
+  • B_NMF_vs_LDA(MW) — ordinal ratings pooled by model, ranked → Mann–Whitney U and p, and group means (Table 6).
+  • C_Domain_concordance — each coder's domain vs the model → confusion matrices, accuracy, macro-F1 (Table 7).
+  • Tables — the three panels/tables as they appear in the paper, pulled from the sheets above.
+
+Encodings (ordinal 1–3): Coherence Low/Medium/High=1/2/3; Label Poor/Acceptable/Good=1/2/3; Fidelity Artifact/Mixed/Authentic=1/2/3.
+Cohen's kappa: Cohen (1960); interpretation bands: Landis & Koch (1977). Macro-F1: Sokolova & Lapalme (2009), averaged over labels
+present in gold or predictions (zero_division=0). Mann–Whitney U: Mann & Whitney (1947), normal approximation with tie and
+continuity correction (one-sided, NMF > LDA); verified to match scipy.stats.mannwhitneyu.
