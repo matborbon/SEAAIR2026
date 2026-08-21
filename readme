@@ -1,5 +1,8 @@
 SEAAIR2026_maincode.jpynb
-    This cell carries the small set of pipeline helpers it needs (stopwords, the a-priori codebook, text cleaning/tokenization, the data
+
+    *** If you need the actual dataset, please email the authors so that identifying labels and names are removed.***
+
+    This cell/code carries the small set of pipeline helpers it needs (stopwords, the a-priori codebook, text cleaning/tokenization, the data
     loader, RAKE, codebook alignment, top-word extraction, and figure styling), so it can be run on its own without first executing the main pipeline cell.
     
     The three configurations answer "where should RAKE sit relative to the topic model?", holding k fixed at 15 and comparing LDA against NMF in each:
@@ -17,8 +20,7 @@ SEAAIR2026_maincode.jpynb
             human-readable multi-word LABEL per topic. RAKE never touches discovery here; it only names topics after the fact.
     
     Outputs (written under {OUTPUT_ROOT}/k15_lda_nmf_comparison/):
-        comparison_metrics.csv        — coherence (c_v), topic diversity, codebook
-                                        alignment counts, per (config x model)
+        comparison_metrics.csv        — coherence (c_v), topic diversity, codebook alignment counts, per (config x model)
         topic_keywords_by_model.csv   — top words per topic per model per config
         cross_method_agreement.csv    — greedy LDA<->NMF topic matches (Jaccard) per config
         topic_labels_rake.csv         — config-3 RAKE labels, LDA and NMF side by side
