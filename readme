@@ -1,18 +1,48 @@
+SEAAIR2026_maincode.jpynb
+    This cell carries the small set of pipeline helpers it needs (stopwords, the a-priori codebook, text cleaning/tokenization, the data
+    loader, RAKE, codebook alignment, top-word extraction, and figure styling), so it can be run on its own without first executing the main pipeline cell.
+    
+    The three configurations answer "where should RAKE sit relative to the topic model?", holding k fixed at 15 and comparing LDA against NMF in each:
+    
+      (1) RAKE as PREPROCESSING
+            Corpus-level RAKE phrases are merged into atomic tokens (e.g. "magaling mag explain" -> "magaling_mag_explain") and injected into the
+            modeled vocabulary BEFORE fitting, so both LDA and NMF see the phrase as one feature. Tests whether feeding RAKE phrases in as features changes
+            topic quality / cross-method agreement.
+    
+      (2) NO RAKE  (baseline multi-model evaluation)
+            Standard TF-IDF/NMF and BoW/LDA on the existing tokens. The clean head-to-head LDA-vs-NMF reference the other two configs are judged against.
+    
+      (3) RAKE as POST-PROCESSING  (topic labeling)
+            LDA and NMF are fit WITHOUT RAKE (the baseline models from config 2), then RAKE is run on each discovered topic's assigned comments to produce a
+            human-readable multi-word LABEL per topic. RAKE never touches discovery here; it only names topics after the fact.
+    
+    Outputs (written under {OUTPUT_ROOT}/k15_lda_nmf_comparison/):
+        comparison_metrics.csv        — coherence (c_v), topic diversity, codebook
+                                        alignment counts, per (config x model)
+        topic_keywords_by_model.csv   — top words per topic per model per config
+        cross_method_agreement.csv    — greedy LDA<->NMF topic matches (Jaccard) per config
+        topic_labels_rake.csv         — config-3 RAKE labels, LDA and NMF side by side
+        topic_codebook_alignment.csv  — per-topic aligned/ambiguous/inductive status
+        figures/cmp_coherence.png     — coherence by config x model
+        figures/cmp_alignment.png     — codebook alignment mix by config x model
+        figures/cmp_agreement.png     — cross-method (LDA vs NMF) agreement by config
+
+
 Human Validation — Analysis Workbook
-This workbook traces the two coders' raw Taguette ratings through to Tables 5-7 of the manuscript.
-All grey-tabbed computation sheets use LIVE FORMULAS; edit the blue input cells on 'Raw ratings' and every result recomputes.
-
-Design: 30 no-RAKE baseline topics (15 LDA + 15 NMF), each rated by a Main coder (C1) and a Secondary coder (C2)
-on four criteria — Coherence, Domain, Label, Fidelity — giving 30×2×4 = 240 judgments. Topics were blinded to model identity.
-
-Sheets:
-  • Raw ratings — the coders' tags per topic (BLUE = raw input), plus the topic key and ordinal encodings (formulas).
-  • A_Reliability(kappa) — inter-coder contingency tables → percent agreement and Cohen's kappa (Table 5).
-  • B_NMF_vs_LDA(MW) — ordinal ratings pooled by model, ranked → Mann–Whitney U and p, and group means (Table 6).
-  • C_Domain_concordance — each coder's domain vs the model → confusion matrices, accuracy, macro-F1 (Table 7).
-  • Tables — the three panels/tables as they appear in the paper, pulled from the sheets above.
-
-Encodings (ordinal 1–3): Coherence Low/Medium/High=1/2/3; Label Poor/Acceptable/Good=1/2/3; Fidelity Artifact/Mixed/Authentic=1/2/3.
-Cohen's kappa: Cohen (1960); interpretation bands: Landis & Koch (1977). Macro-F1: Sokolova & Lapalme (2009), averaged over labels
-present in gold or predictions (zero_division=0). Mann–Whitney U: Mann & Whitney (1947), normal approximation with tie and
-continuity correction (one-sided, NMF > LDA); verified to match scipy.stats.mannwhitneyu.
+      This workbook traces the two coders' raw Taguette ratings through to Tables 5-7 of the manuscript.
+      All grey-tabbed computation sheets use LIVE FORMULAS; edit the blue input cells on 'Raw ratings' and every result recomputes.
+      
+      Design: 30 no-RAKE baseline topics (15 LDA + 15 NMF), each rated by a Main coder (C1) and a Secondary coder (C2)
+      on four criteria — Coherence, Domain, Label, Fidelity — giving 30×2×4 = 240 judgments. Topics were blinded to model identity.
+      
+      Sheets:
+        • Raw ratings — the coders' tags per topic (BLUE = raw input), plus the topic key and ordinal encodings (formulas).
+        • A_Reliability(kappa) — inter-coder contingency tables → percent agreement and Cohen's kappa (Table 5).
+        • B_NMF_vs_LDA(MW) — ordinal ratings pooled by model, ranked → Mann–Whitney U and p, and group means (Table 6).
+        • C_Domain_concordance — each coder's domain vs the model → confusion matrices, accuracy, macro-F1 (Table 7).
+        • Tables — the three panels/tables as they appear in the paper, pulled from the sheets above.
+      
+      Encodings (ordinal 1–3): Coherence Low/Medium/High=1/2/3; Label Poor/Acceptable/Good=1/2/3; Fidelity Artifact/Mixed/Authentic=1/2/3.
+      Cohen's kappa: Cohen (1960); interpretation bands: Landis & Koch (1977). Macro-F1: Sokolova & Lapalme (2009), averaged over labels
+      present in gold or predictions (zero_division=0). Mann–Whitney U: Mann & Whitney (1947), normal approximation with tie and
+      continuity correction (one-sided, NMF > LDA); verified to match scipy.stats.mannwhitneyu.
