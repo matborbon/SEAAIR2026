@@ -1,0 +1,16 @@
+subtheme_code,subtheme_label,domain_code,seeded,topics_aligned,comments_aligned,recovered_computationally
+A1,Teaching effectiveness,A,yes,1,781,yes
+A2,Grading and assessment,A,yes,1,976,yes
+A3,Professional conduct,A,yes,0,0,no
+A4,Recommendation/avoidance,A,yes,0,0,no
+B1,Course evaluation,B,yes,1,450,yes
+B2,Institutional policies,B,yes,2,1358,yes
+B3,Comparative institutional evaluation,B,yes,2,2124,yes
+C1,Evidence type,C,human-coded only,0,0,n/a — human-coded
+C2,Rhetorical strategy,C,human-coded only,0,0,n/a — human-coded
+C3,Evaluation specificity,C,human-coded only,0,0,n/a — human-coded
+C4,Platform reflexivity,C,yes,0,0,no
+D1,Evaluation credibility norms,D,human-coded only,0,0,n/a — human-coded
+D2,Solidarity and support,D,yes,0,0,no
+D3,Gatekeeping and exclusion,D,yes,0,0,no
+D4,Filipino cultural evaluation frames,D,yes,0,0,no

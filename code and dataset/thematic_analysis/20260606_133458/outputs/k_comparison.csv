@@ -1,0 +1,4 @@
+k,lda_coherence,n_comments,topics_aligned,topics_ambiguous,topics_inductive,pct_comments_inductive,output_dir
+10,0.5229326294114003,24164,3,6,1,7.8,/content/drive/MyDrive/2026 Dissertation/dissertation dataset/thematic_analysis/20260606_133458/outputs/k10
+15,0.5200434207989522,24164,5,8,2,8.9,/content/drive/MyDrive/2026 Dissertation/dissertation dataset/thematic_analysis/20260606_133458/outputs/k15
+20,0.45729360299047545,24164,7,9,4,15.0,/content/drive/MyDrive/2026 Dissertation/dissertation dataset/thematic_analysis/20260606_133458/outputs/k20

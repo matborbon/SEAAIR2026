@@ -1,0 +1,61 @@
+domain_code,phrase,rake_score,n_comments_in_domain
+?,hello,409.0,1874
+?,appeal,278.0,1874
+?,results,217.0,1874
+?,appeal letter,164.0,1874
+?,letter,140.0,1874
+?,waitlisted,122.0,1874
+?,waitlisted applicants,120.0,1874
+?,accepted,108.0,1874
+?,endorsement letter,104.0,1874
+?,recon,101.0,1874
+?,rejected,94.0,1874
+?,deadline,88.0,1874
+?,anyone,84.0,1874
+?,recon letter,80.0,1874
+?,submit,77.0,1874
+A,email,507.0,2632
+A,good luck,356.0,2632
+A,good,325.0,2632
+A,received,174.0,2632
+A,hello,169.0,2632
+A,send,165.0,2632
+A,yes,129.0,2632
+A,best,102.0,2632
+A,time,100.0,2632
+A,confirmation email,96.0,2632
+A,sent,93.0,2632
+A,receive,88.0,2632
+A,received mine,88.0,2632
+A,like,86.0,2632
+A,wait,84.0,2632
+B,like,1089.0,13271
+B,course,755.0,13271
+B,one,696.0,13271
+B,time,675.0,13271
+B,hello,653.0,13271
+B,first year,644.0,13271
+B,ateneo,633.0,13271
+B,take,630.0,13271
+B,students,596.0,13271
+B,first choice,528.0,13271
+B,school,510.0,13271
+B,able,480.0,13271
+B,see,465.0,13271
+B,apply,451.0,13271
+B,program,442.0,13271
+D,prof,577.0,6387
+D,class,383.0,6387
+D,yan,319.0,6387
+D,profs,270.0,6387
+D,classes,218.0,6387
+D,time,194.0,6387
+D,students,194.0,6387
+D,alam,172.0,6387
+D,like,166.0,6387
+D,lahat,162.0,6387
+D,one,143.0,6387
+D,take,134.0,6387
+D,iba,132.0,6387
+D,gusto,126.0,6387
+D,see,107.0,6387

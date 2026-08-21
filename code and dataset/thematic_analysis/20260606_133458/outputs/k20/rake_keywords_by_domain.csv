@@ -1,0 +1,61 @@
+domain_code,phrase,rake_score,n_comments_in_domain
+?,first year,568.0,3635
+?,program,406.0,3635
+?,degree program,404.0,3635
+?,first choice,392.0,3635
+?,yes,382.0,3635
+?,appeal,358.0,3635
+?,change,319.0,3635
+?,shift,299.0,3635
+?,year,248.0,3635
+?,hello,234.0,3635
+?,last year,228.0,3635
+?,accepted,228.0,3635
+?,honors program,216.0,3635
+?,course,202.0,3635
+?,appeal letter,200.0,3635
+A,time,699.0,4906
+A,prof,472.0,4906
+A,email,457.0,4906
+A,grades,265.0,4906
+A,take,229.0,4906
+A,profs,223.0,4906
+A,like,208.0,4906
+A,results,208.0,4906
+A,received,189.0,4906
+A,hello,160.0,4906
+A,grade,150.0,4906
+A,first time,144.0,4906
+A,send,143.0,4906
+A,one,138.0,4906
+A,day,137.0,4906
+B,like,922.0,11613
+B,hello,899.0,11613
+B,one,644.0,11613
+B,students,641.0,11613
+B,course,514.0,11613
+B,ateneo,488.0,11613
+B,school,461.0,11613
+B,see,435.0,11613
+B,take,397.0,11613
+B,able,390.0,11613
+B,class,362.0,11613
+B,help,335.0,11613
+B,better,312.0,11613
+B,apply,308.0,11613
+B,dlsu,284.0,11613
+D,good luck,320.0,4010
+D,yan,275.0,4010
+D,good,221.0,4010
+D,alam,133.0,4010
+D,lahat,118.0,4010
+D,gusto,98.0,4010
+D,iba,93.0,4010
+D,like,79.0,4010
+D,ganyan,72.0,4010
+D,pwede,70.0,4010
+D,hahaha,68.0,4010
+D,sana,67.0,4010
+D,fair,65.0,4010
+D,mag aral,64.0,4010
+D,latin honors,64.0,4010
