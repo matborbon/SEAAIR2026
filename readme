@@ -29,6 +29,9 @@ SEAAIR2026_maincode.jpynb
         figures/cmp_alignment.png     — codebook alignment mix by config x model
         figures/cmp_agreement.png     — cross-method (LDA vs NMF) agreement by config
 
+Coding
+      2026-08-17_Coder1.sqlite3 - Coder 1 Taguette's project file   
+      2026-08-04_Coder2.sqlite3 - Coder 2 Taguette's project file
 
 Human Validation — Analysis Workbook
       This workbook traces the two coders' raw Taguette ratings through to Tables 5-7 of the manuscript.
@@ -48,3 +51,4 @@ Human Validation — Analysis Workbook
       Cohen's kappa: Cohen (1960); interpretation bands: Landis & Koch (1977). Macro-F1: Sokolova & Lapalme (2009), averaged over labels
       present in gold or predictions (zero_division=0). Mann–Whitney U: Mann & Whitney (1947), normal approximation with tie and
       continuity correction (one-sided, NMF > LDA); verified to match scipy.stats.mannwhitneyu.
+
